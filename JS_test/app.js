@@ -99,7 +99,7 @@ console.log("🚀 ~ file: app.js:84 ~ peopleWithYearlySalaries:", peopleWithYear
 people
 .map((person) => ({...person, yearlySalary: person.salary * 12}))
 // .filter((person) => person.yearlySalary > 100000)
-// destructuring
+// destructuring !!!
 .filter(({yearlySalary}) => yearlySalary > 100000)
 // .filter((person) => {return person.yearlySalary > 100000})
 .forEach(personDisplay);
