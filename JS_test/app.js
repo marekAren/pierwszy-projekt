@@ -72,3 +72,34 @@ console.log('linia bez nawiasu') //działa
 people.filter((person) => person.salary > 5000).forEach(personDisplay);
 console.log('linia z nawiasem plus return'); //wg chatGPT  działa
 people.filter((person) => {return person.salary > 5000}).forEach(personDisplay);
+
+console.log('# przekształcanie tablic #'); 
+
+const yearlySalaries = people.map((person) => person.salary * 12);
+// personDisplay(yearlySalares);
+console.log("🚀 ~ file: app.js:79 ~ yearlySalares:", yearlySalaries);
+// ok dziala
+
+ const peopleWithYearlySalaries = people
+.map((person) =>({...person,yearlySalary: person.salary * 12 }));
+
+// nie dziala
+// const peopleWithYearlySalaries = people
+// .map((person) =>{return ...person,yearlySalary: person.salary * 12 });
+
+// dziala chat GPT
+// const peopleWithYearlySalaries = people.map((person) => {
+//     return { ...person, yearlySalary: person.salary * 12 };
+// });
+
+
+console.log("🚀 ~ file: app.js:84 ~ peopleWithYearlySalaries:", peopleWithYearlySalaries)
+
+//return albo brak nawiasu klamrowego w strzalkowej dlaczego?
+people
+.map((person) => ({...person, yearlySalary: person.salary * 12}))
+// .filter((person) => person.yearlySalary > 100000)
+// destructuring
+.filter(({yearlySalary}) => yearlySalary > 100000)
+// .filter((person) => {return person.yearlySalary > 100000})
+.forEach(personDisplay);
