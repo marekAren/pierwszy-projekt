@@ -30,9 +30,9 @@ console.log('#forEach#');
     // console.log(people.forEach(pozycja));
     // people.forEach((person_linii) => {
 
-people.forEach ((person_linii,index) => {
+people.forEach ((person_linii,index,arr) => {
     // console.log(person_linii);
-    personDisplay(person_linii,index);
+    personDisplay(person_linii,index,arr);
 
 });
 
