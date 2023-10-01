@@ -1,5 +1,5 @@
 const people = [
-    {name:'Jan', lastname: 'Kowalski', country: 'Poland', salary: 5000 },
+    {name:'Jan', lastname: 'Kowalski', country: 'Polska', salary: 5000 },
     {name:'Krzysztof', lastname: 'Nowak', country: 'Niemcy', salary: 25000 },
     {name:'John', lastname: 'Smith', country: 'USA', salary: 8000 },
     {name:'Sophia', lastname: 'Dubois', country: 'Francja', salary: 35000 },
@@ -14,7 +14,8 @@ const people = [
 
 const personDisplay = (person, index, arr) => {
     // console.log(person.name, person.lastname, person.country);
-    console.log(`${index+1} z ${arr.length }: ${person.name} ${person.lastname}, kraj: ${person.country}`);
+    console.log(`${index+1} z ${arr.length }: ${person.name} 
+    ${person.lastname}, kraj: ${person.country} `);
 }
 
 for (let i=0; i < people.length; i++ ) {
@@ -49,3 +50,25 @@ people.forEach(personDisplay);
 // console.log(people[3],4,people)
 // console.log(people[4],5,people)
 
+const richPeople = [];
+
+for (let i=0; i < people.length; i++) {
+    const person = people[i];
+    if (person.salary > 5000) {
+            richPeople.push(person);    
+    }
+}
+console.log( "Rich people:");
+console.log(richPeople);
+
+richPeople.forEach(personDisplay);
+
+const polishPeople = people.filter((person) => person.country === "Polska");
+console.log("Polish people: ");
+console.log(polishPeople);
+console.log('linia z nawiasem'); //nie działa
+people.filter((person) => {person.salary > 5000}).forEach(personDisplay);
+console.log('linia bez nawiasu') //działa
+people.filter((person) => person.salary > 5000).forEach(personDisplay);
+console.log('linia z nawiasem plus return'); //wg chatGPT  działa
+people.filter((person) => {return person.salary > 5000}).forEach(personDisplay);
