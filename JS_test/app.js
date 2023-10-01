@@ -30,11 +30,16 @@ console.log('#forEach#');
     // console.log(people.forEach(pozycja));
     // people.forEach((person_linii) => {
 
-people.forEach ((person_linii,index,arr) => {
+//people.forEach ((person_linii,index,arr) => {
     // console.log(person_linii);
-    personDisplay(person_linii,index,arr);
+//    personDisplay(person_linii,index,arr);
 
-});
+//});
+//bez nawiasow bo personDisplay nie zwraca zadnych parametrow
+// people.forEach(personDisplay());
+//bez nawias bo przekazujemy definicje funkcji jako paremetr, bo tez 3 parametry .zamiast nowej funkci
+people.forEach(personDisplay);
+
 
 // skrot cmd+alt+strzalka gora/dol pisanie w wielu liniach na raz 
 
